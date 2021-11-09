@@ -1,0 +1,9 @@
+log:
+  file: log.log
+  level: debug
+  maxSize: 100
+  maxBackups: 100
+  maxAge: 100
+  webManageAbled: false
+  webManagePort: ":11111"
+  consoleOutput: true
