@@ -1,4 +1,4 @@
-module tool-box
+module github.com/71010068/tool-box
 
 go 1.16
 
