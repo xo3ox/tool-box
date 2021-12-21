@@ -27,10 +27,17 @@ func Validator(data interface{}) error {
 
 	// 注册 根据json名称返回字段名 的函数
 	validate.RegisterTagNameFunc(func(field reflect.StructField) string {
-		tag := field.Tag.Get("json")
-		if tag == "-" {
-			return field.Name
+		var tag string
+		if tag == "" {
+			tag = field.Tag.Get("label")
+			if tag == "" {
+				tag = field.Tag.Get("json")
+				if tag == "-" {
+					return field.Name
+				}
+			}
 		}
+
 		return tag
 	})
 

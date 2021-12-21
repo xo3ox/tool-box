@@ -10,8 +10,8 @@ import (
 func TestValidator(t *testing.T) {
 
 	type User struct {
-		ID   int      `validate:"required,gt=0" json:"id"` // 姓名
-		Name []string `validate:"required,gt=1,lt=3"`
+		ID   int      `validate:"required,gt=0" json:"id"`
+		Name []string `validate:"required,gt=1,lt=3" label:"姓名"` // 姓名
 		Age  int      `validate:"required,gt=0"  json:"-"`
 	}
 
