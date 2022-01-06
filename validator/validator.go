@@ -41,6 +41,7 @@ func Validator(data interface{}) error {
 		return tag
 	})
 
+	
 	if err := validate.Struct(data); err != nil {
 		for _, v := range err.(validator.ValidationErrors) {
 			return errors.New(v.Translate(trans))
